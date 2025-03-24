@@ -1,0 +1,259 @@
+.main {
+    background-color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 1;
+}
+
+.wrapper-header {
+    background-color: #efefef;
+}
+
+.wrapper-header-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.wrapper-header-nav-h1 {
+    margin: -45px 0px 0px -5px;
+}
+
+.wrapper-header-nav-span {
+    background-color: #FDFD00;
+    padding: 5px 160px;
+}
+
+.wrapper-header-nav-ul {
+    height: auto;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    overflow: hidden;
+    transition: .3s;
+    list-style: none;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 50px 0 0 0;
+    margin: 0;
+}
+
+.wrapper-header-nav-ul.open {
+    width: 350px;
+    height: 400px;
+    right: 0;
+}
+
+.wrapper-header-nav-li .wrapper-header-nav-li-a {
+    padding: 8px;
+    font-size: 16px;
+    color: #464646;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.hamburger {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    cursor: pointer;
+    width: 32px;
+    height: 24px;
+    z-index: 10;
+}
+
+.hamburger span {
+    /*3本の線を作る*/
+    transition: all .3s;
+    position: absolute;
+    height: 2px;
+    background-color: #333;
+    width: 100%;
+    z-index: 10;
+}
+
+.hamburger span:nth-of-type(1) {
+    /*上の線の位置*/
+    top: 4px;
+}
+
+.hamburger span:nth-of-type(2) {
+    /*真ん中の線の位置*/
+    top: 12px;
+}
+
+.hamburger span:nth-of-type(3) {
+    /*下の線の位置*/
+    top: 20px;
+}
+
+.hamburger.open span:nth-of-type(1) {
+    /*openのとき、上の線を右斜めにする*/
+    top: 5px;
+    transform: translateY(6px) rotate(-33deg);
+}
+
+.hamburger.open span:nth-of-type(2) {
+    /*真ん中の線を消す*/
+    opacity: 0;
+}
+
+.hamburger.open span:nth-of-type(3) {
+    /*下の線を左斜めにする*/
+    top: 17px;
+    transform: translateY(-6px) rotate(33deg);
+}
+
+/* ハンバーガーメニュー */
+.wrapper-title {
+    width: 100%;
+    height: 30px;
+    background-color: #FDFD00;
+    margin-top: -72px;
+}
+
+.wrapper-group {
+    margin: -50px auto;
+    width: 97%;
+    height: 200px;
+    background-color: #72FDCE;
+}
+
+.wrapper-box {
+    margin: 40px auto;
+    width: 97%;
+    height: 200px;
+    background-color: #72FDCE;
+}
+
+.wrapper-dark {
+    display: none;
+}
+
+#darkmodeBtn {
+    background-color: gray;
+    color: white;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    /* ハンバーガーメニュー（z-index: 10）より下、他のコンテンツより上 */
+    display: none;
+    /* 初期状態は非表示 */
+    transition: 0.3s;
+    /* スムーズに表示/非表示を切り替える */
+}
+
+/* タグメニュー */
+.tabs {
+    max-width: 500px;
+    margin: 10% auto;
+}
+
+.tab-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.tab-item {
+    border-radius: 5px 5px 0 0;
+    background-color: rgba(113, 253, 206, 0.5);
+    padding: 0.5em 1.2em;
+    /* 左右の間隔 */
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.tab-content {}
+
+.tab-panel {
+    display: none;
+    margin-left: 5px;
+    width: 96%;
+    height: 225px;
+    background-color: #71FDCE;
+}
+
+.tab-item.active {
+    background-color: #71FDCE;
+}
+
+.tab-panel.active {
+    display: block;
+    padding: 3%;
+}
+
+.tab-panel.active h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* アコーディオン */
+.accordions {
+    max-width: 600px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px 70px 100px;
+}
+
+.accordion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.accordion__menu {}
+
+.accordion__button {
+    appearance: none;
+    text-align: inherit;
+    width: 100%;
+    background-color: #747474;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.accordion__body {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.accordion__textOne,
+.accordion__textTwo,
+.accordion__textThree,
+.accordion__textFour {
+    border-bottom: 1px solid #757575;
+    padding: 7px;
+}
+
+/* テーブル列削除 */
+.wrapper-table {
+    margin: 40px 0px 0px -125px;
+}
+
+.wrapper-table-th {
+    background-color: #747474;
+}
+
+.wrapper-table-th,
+.wrapper-table-td {
+    padding: 10px 10px;
+    border: 1px solid black;
+}
